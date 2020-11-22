@@ -1,11 +1,11 @@
 #pragma once
 #include "BinarySearchTree.h"
 
+
 class AVL : public BinarySearchTree
 {
 public:
-
-	bool displayRotation = true;
+	bool displayRotations = true;
 
 	int height(Nodes* node);
 	int difference(Nodes* node);

@@ -1,5 +1,6 @@
 #include "AVL.h"
 
+
 int AVL::height(Nodes* node)
 {
     int h = 0;
@@ -34,7 +35,7 @@ Nodes* AVL::RRrotation(Nodes* parent)
     Nodes* temp = parent->rightChild;
     parent->rightChild = temp->leftChild;
     temp->leftChild = parent;
-    if (displayRotaton) 
+    if (displayRotations) 
         cout << " RR roation on " << parent->levelnumber << endl;
     
     return temp;
@@ -45,7 +46,7 @@ Nodes* AVL::LLrotation(Nodes* parent)
     Nodes* temp = parent->leftChild;
     parent->leftChild = temp->rightChild;
     temp->rightChild = parent;
-    if (displayRotatons)
+    if (displayRotations)
         cout << " RR roation on " << parent->levelnumber << endl;
 
     return temp;
@@ -56,7 +57,7 @@ Nodes* AVL::RLrotation(Nodes* parent)
     Nodes* temp = parent->rightChild;
     parent->rightChild = RRrotation(temp);
     temp->leftChild = parent;
-    if (displayRotatons)
+    if (displayRotations)
         cout << " RL roation on " << parent->levelnumber << endl;
     // swaps left and rights
     return RRrotation(parent);
@@ -66,7 +67,7 @@ Nodes* AVL::LRrotation(Nodes* parent)
 {
     Nodes* temp = parent->leftChild;
     parent->leftChild = RRrotation(temp);
-    if (displayRotatons)
+    if (displayRotations)
         cout << " LR roation on " << parent->levelnumber<< endl;
     return LLrotation(parent);
 }
